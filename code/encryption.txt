@@ -1,0 +1,3 @@
+password char array:b
+cipher : c4d03d30be1dfdd39247582977f5c6e5f8ea8a3bef76c460
+password: This is another example
