@@ -1,0 +1,66 @@
+password used: abc
+cipher : c4d03d30be1dfdd39247582977f5c6e5f8ea8a3bef76c460
+Encrypted value: This is another example
+time taken(ms) to run encryption and decryption for loop 0: 108
+password used: abc
+cipher : c4d03d30be1dfdd39247582977f5c6e5f8ea8a3bef76c460
+Encrypted value: This is another example
+time taken(ms) to run encryption and decryption for loop 1: 2
+password used: abc
+cipher : c4d03d30be1dfdd39247582977f5c6e5f8ea8a3bef76c460
+Encrypted value: This is another example
+time taken(ms) to run encryption and decryption for loop 2: 1
+password used: abc
+cipher : c4d03d30be1dfdd39247582977f5c6e5f8ea8a3bef76c460
+Encrypted value: This is another example
+time taken(ms) to run encryption and decryption for loop 3: 1
+password used: abc
+cipher : c4d03d30be1dfdd39247582977f5c6e5f8ea8a3bef76c460
+Encrypted value: This is another example
+time taken(ms) to run encryption and decryption for loop 4: 2
+Total time to run 5 iterations: 114
+average time take for 5 iterations: 22
+password used: P@ssW0rD
+cipher : b639839be361061096c2a3f6f8b3ad2ccc4b550d2692248c
+Encrypted value: This is another example
+time taken(ms) to run encryption and decryption for loop 0: 2
+password used: P@ssW0rD
+cipher : b639839be361061096c2a3f6f8b3ad2ccc4b550d2692248c
+Encrypted value: This is another example
+time taken(ms) to run encryption and decryption for loop 1: 1
+password used: P@ssW0rD
+cipher : b639839be361061096c2a3f6f8b3ad2ccc4b550d2692248c
+Encrypted value: This is another example
+time taken(ms) to run encryption and decryption for loop 2: 1
+password used: P@ssW0rD
+cipher : b639839be361061096c2a3f6f8b3ad2ccc4b550d2692248c
+Encrypted value: This is another example
+time taken(ms) to run encryption and decryption for loop 3: 1
+password used: P@ssW0rD
+cipher : b639839be361061096c2a3f6f8b3ad2ccc4b550d2692248c
+Encrypted value: This is another example
+time taken(ms) to run encryption and decryption for loop 4: 1
+Total time to run 5 iterations: 6
+average time take for 5 iterations: 1
+password used: Th!$IsAV3ryL0n9pA$$w0rd
+cipher : fffecd4d43d0e332a4a6cbe8ce11f1213cc3d9461c60e6db
+Encrypted value: This is another example
+time taken(ms) to run encryption and decryption for loop 0: 1
+password used: Th!$IsAV3ryL0n9pA$$w0rd
+cipher : fffecd4d43d0e332a4a6cbe8ce11f1213cc3d9461c60e6db
+Encrypted value: This is another example
+time taken(ms) to run encryption and decryption for loop 1: 1
+password used: Th!$IsAV3ryL0n9pA$$w0rd
+cipher : fffecd4d43d0e332a4a6cbe8ce11f1213cc3d9461c60e6db
+Encrypted value: This is another example
+time taken(ms) to run encryption and decryption for loop 2: 1
+password used: Th!$IsAV3ryL0n9pA$$w0rd
+cipher : fffecd4d43d0e332a4a6cbe8ce11f1213cc3d9461c60e6db
+Encrypted value: This is another example
+time taken(ms) to run encryption and decryption for loop 3: 1
+password used: Th!$IsAV3ryL0n9pA$$w0rd
+cipher : fffecd4d43d0e332a4a6cbe8ce11f1213cc3d9461c60e6db
+Encrypted value: This is another example
+time taken(ms) to run encryption and decryption for loop 4: 1
+Total time to run 5 iterations: 5
+average time take for 5 iterations: 1
