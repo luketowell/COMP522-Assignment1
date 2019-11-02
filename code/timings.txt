@@ -1,0 +1,28 @@
+Password based encryption timings
+-----------------------------
+Password used: abc
+loop 0: 94
+loop 1: 2
+loop 2: 1
+loop 3: 2
+loop 4: 2
+Total time:101
+average time:20
+-----------------------------
+Password used: P@ssW0rD
+loop 0: 2
+loop 1: 2
+loop 2: 1
+loop 3: 2
+loop 4: 1
+Total time:8
+average time:1
+-----------------------------
+Password used: Th!$IsAV3ryL0n9pA$$w0rd
+loop 0: 1
+loop 1: 1
+loop 2: 1
+loop 3: 1
+loop 4: 0
+Total time:4
+average time:0

@@ -19,11 +19,13 @@ public class PasswordBasedEncryption {
 
         // Setup passwords used to encrypt values
         String[] passwords = new String[] { "abc", "P@ssW0rD", "Th!$IsAV3ryL0n9pA$$w0rd" };
+        System.out.println("Password based encryption timings");
 
         for (int i = 0; i < passwords.length; i++) {
-
+            System.out.println("-----------------------------");
             // initialise time array
             long[] time = new long[6];
+            System.out.println("Password used: " + passwords[i]);
 
             for (int j = 0; j < iterationCount; j++) {
                 // start timing
@@ -78,11 +80,8 @@ public class PasswordBasedEncryption {
                 time[j] = totalTimeMs;
 
                 // output of all times and key components of the encryption algorithm
-                System.out.println("password used: " + passwords[i]);
-                System.out.println("cipher : " + Utils.toHex(ciphertext));
-                System.out.println("Encrypted value: " + plainText);
-                System.out
-                        .println("time taken(ms) to run encryption and decryption for loop " + j + ": " + totalTimeMs);
+
+                System.out.println("loop " + j + ": " + totalTimeMs);
             }
             // summed time calculation to output average over the iteration counts.
             long summedTime = 0;
@@ -91,9 +90,10 @@ public class PasswordBasedEncryption {
             }
 
             // Work out and print the average time for each password
-            System.out.println("Total time to run 5 iterations: " + summedTime);
+            System.out.println("Total time:" + summedTime);
             long avgTime = summedTime / iterationCount;
-            System.out.println("average time take for " + iterationCount + " iterations: " + avgTime);
+            System.out.println("average time:" + avgTime);
+
         }
     }
 }
