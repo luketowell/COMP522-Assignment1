@@ -60,7 +60,7 @@ public class PasswordBasedEncryption {
                 pbeCipher.init(Cipher.ENCRYPT_MODE, pbeKey, pbeParamSpec);
 
                 // Our plaintext
-                byte[] cleartext = "This is another example".getBytes();
+                byte[] cleartext = "This is an example string".getBytes();
 
                 // Encrypt the plaintext
                 byte[] ciphertext = pbeCipher.doFinal(cleartext);
@@ -81,7 +81,7 @@ public class PasswordBasedEncryption {
 
                 // output of all times and key components of the encryption algorithm
 
-                System.out.println("loop " + j + ": " + totalTimeMs);
+                System.out.println("loop " + j + ": " + totalTimeMs + "ms");
             }
             // summed time calculation to output average over the iteration counts.
             long summedTime = 0;
