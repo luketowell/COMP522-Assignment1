@@ -10,24 +10,24 @@ import java.security.Key;
 
 public class PasswordBasedEncryption {
     public static void main(String[] args) throws Exception {
-        PBEKeySpec pbeKeySpec;
-        PBEParameterSpec pbeParamSpec;
-        SecretKeyFactory keyFac;
-
         // setup iteration count
         int iterationCount = 5;
 
         // Setup passwords used to encrypt values
+
         String[] passwords = new String[] { "abc", "P@ssW0rD", "Th!$IsAV3ryL0n9pA$$w0rd" };
         System.out.println("Password based encryption timings");
 
         for (int i = 0; i < passwords.length; i++) {
             System.out.println("-----------------------------");
             // initialise time array
-            long[] time = new long[6];
+            double[] time = new double[6];
             System.out.println("Password used: " + passwords[i]);
 
             for (int j = 0; j < iterationCount; j++) {
+                PBEKeySpec pbeKeySpec;
+                PBEParameterSpec pbeParamSpec;
+                SecretKeyFactory keyFac;
                 // start timing
                 long startTime = System.nanoTime();
                 // Salt
@@ -64,6 +64,7 @@ public class PasswordBasedEncryption {
 
                 // Encrypt the plaintext
                 byte[] ciphertext = pbeCipher.doFinal(cleartext);
+                System.out.println("Cipher text: " + Utils.toHex(ciphertext));
 
                 pbeCipher.init(Cipher.DECRYPT_MODE, pbeKey, pbeParamSpec);
 
@@ -76,22 +77,23 @@ public class PasswordBasedEncryption {
 
                 // calculate total time and add to the time array
                 long totalTime = endTime - startTime;
-                long totalTimeMs = totalTime / 1000000;
+                double totalTimeMs = totalTime / 1000000.0;
                 time[j] = totalTimeMs;
 
                 // output of all times and key components of the encryption algorithm
-
+                System.out.println("Decrypted text: " + plainText);
                 System.out.println("loop " + j + ": " + totalTimeMs + "ms");
             }
             // summed time calculation to output average over the iteration counts.
-            long summedTime = 0;
+            double summedTime = 0;
             for (var k = 0; k < time.length; k++) {
                 summedTime += time[k];
             }
 
             // Work out and print the average time for each password
+
             System.out.println("Total time:" + summedTime);
-            long avgTime = summedTime / iterationCount;
+            double avgTime = summedTime / iterationCount;
             System.out.println("average time:" + avgTime);
 
         }

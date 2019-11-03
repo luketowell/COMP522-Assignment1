@@ -91,16 +91,32 @@ If we presume that passwords are made of uppercase, lowercase numbers and specia
 limited to traditional ASCII encoded characters then this gives the attacker a possible 95 characters for each character in the password.
 The equation for working out a password via brute force attack is therefore $95^n$ where n is the number of characters within the password.
 
-There for is we take the time for one iteration from above which is 1ms 
+If we take the time for one iteration from above which is 1ms we can assume that it would take a maximum of 95 milliseconds per character in the worst case to crack a 3 character password which would be $95^3$ (857375 combinations) * the taken to complete one iteration e.g. 1ms per attempt would take 857375ms or 857.375 seconds or 14.3 minutes.  
 
 \section{How Does Iteration Count Affect Brute Force Timing?}
-Some text
+What does iteration count mean?
+
+What is the maximum value of iteration count?
 
 \section{Brute Force Attack Estimation Without Known Iteration Count}
-Some text
+Essentially if a hacker does not know the iteration count of an application then they have to try the same brute
+force attack multiple times for multiple iteration counts which essentially means that the time taken grows exponentially.
+E.g. If the iteration count was 300 and the hacker started their hack attempt with an iteration count of 1 they would have
+to work out the characters in the password $95^n*i$ where $i$ is the number of iterations needed to reach the one initially
+used when hashing the password.
 
 \section{Comparison with Online Services}
-Some text
+\begin{center}
+	\begin{tabular}{ |c|c|c| } 
+	 \hline
+	 Password & My Estimation & Online Estimation  \\
+	 \hline
+	 abc & 400 ns & 1 \\ 
+	 P@ssW0rD & ? & 9 hrs \\ 
+	 Th!\$IsAV3ryL0n9pA\$\$w0rd & 1 & 19,000,000,000,000,000,000,000,000 Yrs (19 Septillion Years) \\ 
+	 \hline
+	\end{tabular}
+\end{center}
 
 \newpage
 \section*{Appendices}
