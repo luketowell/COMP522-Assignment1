@@ -6,6 +6,28 @@
 \usepackage{listings}
 \usepackage{float}
 \usepackage{amsmath}
+
+\lstset{frame=tb,
+  language=Java,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
 % define the title
 \author{L. ~Towell, L.M.Towell@liverpool.ac.uk}
 
@@ -24,17 +46,69 @@ Below is the password list that I have decided to use for this exercise.
 	 \hline
 	 N & Password \\
 	 \hline
-	 1 & cell2 \\ 
-	 2 & cell5 \\ 
-	 3 & cell8 \\ 
+	 1 & abc \\ 
+	 2 & P@ssW0rD \\ 
+	 3 & Th!\$IsAV3ryL0n9pA\$\$w0rd \\ 
 	 \hline
 	\end{tabular}
 \end{center}
 
-\section{Section heading}
-Some Text
+\section{Salt and Iteration Count}
+For the purpose of this coursework I have hardcoded the salt used within this program, 
+I have also decided to use an iteration count of 1024. The below table shows the time per run and the average time
+ taken in milliseconds over 5 iterations to encrypt and decrypt the string "This is an example string" using the 
+ defined salt and iteration counts.
 
-\section{Section Heading}
+ The below timings have been recorded running the program in 
+
+\begin{center}
+	\begin{tabular}{ |c|c|c|c| } 
+	 \hline
+	 \multicolumn{4}{|c|}{Iteration time in milliseconds (ms)} \\
+	 \hline
+	 N & abc & P@ssW0rD & Th!\$IsAV3ryL0n9pA\$\$w0rd \\
+	 \hline
+	 1 & 1 & 1 & 1 \\ 
+	 2 & 1 & 1 & 1  \\ 
+	 3 & 1 & 1 & 1  \\ 
+	 4 & 1 & 1 & 1  \\
+	 5 & 1 & 1 & 1  \\
+	 \hline
+	 \hline
+	 Average & 1 & 1 & 1  \\
+	 \hline
+	\end{tabular}
+\end{center}
+
+\section{Brute Force Attack Estimation}
+Given that it is specified that the attacker knows the salt, iteration count, encryption type, 
+input string and cipher text used to encrypt the input string then the only piece of information 
+the attacker would need to find is the password used to encrypt the string. 
+In order to work out the password using a Brute force attach the attacker is going to have to 
+iterate through each possible character that could be used in each different combination.
+
+If we presume that passwords are made of uppercase, lowercase numbers and special characters and they are
+limited to traditional ASCII encoded characters then this gives the attacker a possible 95 characters for each character in the password.
+The equation for working out a password via brute force attack is therefore $95^n$ where n is the number of characters within the password.
+
+There for is we take the time for one iteration from above which is 1ms 
+
+\section{How Does Iteration Count Affect Brute Force Timing?}
 Some text
+
+\section{Brute Force Attack Estimation Without Known Iteration Count}
+Some text
+
+\section{Comparison with Online Services}
+Some text
+
+\newpage
+\section*{Appendices}
+\appendix
+\section{Password Encryption \& Decryption Program}
+\lstinputlisting{../code/PasswordBasedEncryption.java}
+\newpage
+\section{Output of Appendix A when ran in terminal}
+\lstinputlisting{../code/timings.txt}
 
 \end{document}
