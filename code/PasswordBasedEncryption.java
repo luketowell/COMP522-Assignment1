@@ -2,6 +2,9 @@ import javax.crypto.Cipher;
 import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.PBEKeySpec;
 import javax.crypto.spec.PBEParameterSpec;
+
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.security.Key;
 
 /**
@@ -77,12 +80,15 @@ public class PasswordBasedEncryption {
 
                 // calculate total time and add to the time array
                 long totalTime = endTime - startTime;
+
                 double totalTimeMs = totalTime / 1000000.0;
-                time[j] = totalTimeMs;
+                BigDecimal totalTimeMsRounded = new BigDecimal(totalTimeMs).setScale(2, RoundingMode.HALF_EVEN);
+                double roundedTotalTime = totalTimeMsRounded.doubleValue();
+                time[j] = roundedTotalTime;
 
                 // output of all times and key components of the encryption algorithm
                 System.out.println("Decrypted text: " + plainText);
-                System.out.println("loop " + j + ": " + totalTimeMs + "ms");
+                System.out.println("loop " + (j + 1) + ": " + roundedTotalTime + "ms");
             }
             // summed time calculation to output average over the iteration counts.
             double summedTime = 0;
@@ -92,9 +98,9 @@ public class PasswordBasedEncryption {
 
             // Work out and print the average time for each password
 
-            System.out.println("Total time:" + summedTime);
+            System.out.println("Total time:" + new BigDecimal(summedTime).setScale(2, RoundingMode.HALF_EVEN));
             double avgTime = summedTime / iterationCount;
-            System.out.println("average time:" + avgTime);
+            System.out.println("average time:" + new BigDecimal(avgTime).setScale(2, RoundingMode.HALF_EVEN));
 
         }
     }
