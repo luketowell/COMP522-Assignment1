@@ -59,7 +59,8 @@ I have also decided to use an iteration count of 1024. The below table shows the
  taken in milliseconds over 5 iterations to encrypt and decrypt the string "This is an example string" using the 
  defined salt and iteration counts.
 
- The below timings have been recorded running the program on a Macbook air with an Intel core i5 processor and 16GB of RAM. Timings on other machines are likely to differ.
+ The below timings have been recorded running the program on a Macbook air with an Intel core i5 processor and 16GB of RAM.
+  Timings on other machines are likely to differ.
  \begin{center}
 	\begin{tabular}{ |c|c|c|c| } 
 	 \hline
@@ -118,12 +119,36 @@ The table below shows the amount of possible combinations for N character length
 
 In order to estimate the time taken to brute force an attack we need to look at the time taken to iterate through every combination possible
  considering that in the worse case the last combination will be the password we are attempting to discover.
-the calculation for estimating time taken to discover a password is therefore the time taken to try one password (one iteration)
+The calculation for estimating time taken to discover a password is therefore the time taken to try one password (one iteration)
  mutliplied by the number of possible combinations. For example if we say the time taken for 1 iteration is 1ms then we can assume that it
  would take in the worst case to crack a 3 character password (abc) which would be $95^3$ (857375 combinations) * the taken to complete one
  iteration e.g. 1ms per attempt would take 857375ms or 857.375 seconds or 14.3 minutes.
 
- The image 1 is a table of times taken to 
+ \textit{Figure. 1} is a table of estimated time taken to discover passwords of varying character lengths using the brute force method. 
+ You can see that the longer the character length the longer the time taken growing to time periods which will never be broken within
+  our lifetime after just 5 characters. 
+
+  Taking \textit{Figure. 1} into account I have estimated the time taken to break my passwords using my average encryption time of 1.56ms per iteration in the table below.
+
+  \begin{center}
+	\begin{tabular}{ |l|c|r| } 
+	 \hline
+	 Password & characterLength & Estimation to discover \\
+	 \hline
+	 abc & 3 & 142.5ms \\
+	 P@ssW0rD & 8 & 315,554 years \\
+	 Th!\$IsAV3ryL0n9pA\$\$w0rd & 23 & 105 Septillion Years \\
+	 \hline
+	\end{tabular}
+\end{center}
+
+  \newpage
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.9]{Images/timeEstimationImage.png}
+	\caption{Table of time taken to discover characters assuming 1 iteration takes 1 millisecond.}
+\end{figure}
 
 \section{How Does Iteration Count Affect Brute Force Timing?}
 What does iteration count mean?
