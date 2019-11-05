@@ -3,56 +3,56 @@ Password based encryption timings
 Password used: abc
 Cipher text: c4d03d30be1dfdd3c5ace92ebe5bacb959c80a9e9213a21dd5615cf275e8688f
 Decrypted text: This is an example string
-loop 1: 155.77ms
+loop 1: 117.31ms
 Cipher text: c4d03d30be1dfdd3c5ace92ebe5bacb959c80a9e9213a21dd5615cf275e8688f
 Decrypted text: This is an example string
-loop 2: 8.55ms
+loop 2: 1.56ms
 Cipher text: c4d03d30be1dfdd3c5ace92ebe5bacb959c80a9e9213a21dd5615cf275e8688f
 Decrypted text: This is an example string
-loop 3: 6.27ms
+loop 3: 2.09ms
 Cipher text: c4d03d30be1dfdd3c5ace92ebe5bacb959c80a9e9213a21dd5615cf275e8688f
 Decrypted text: This is an example string
-loop 4: 12.94ms
+loop 4: 1.96ms
 Cipher text: c4d03d30be1dfdd3c5ace92ebe5bacb959c80a9e9213a21dd5615cf275e8688f
 Decrypted text: This is an example string
-loop 5: 1.57ms
-Total time:185.10
-average time:37.02
+loop 5: 2.32ms
+Total time:125.24
+average time:25.05
 -----------------------------
 Password used: P@ssW0rD
 Cipher text: b639839be3610610478c09998f8ede508799d641f60110840dd59b2e0790b125
 Decrypted text: This is an example string
-loop 1: 2.45ms
+loop 1: 2.11ms
 Cipher text: b639839be3610610478c09998f8ede508799d641f60110840dd59b2e0790b125
 Decrypted text: This is an example string
-loop 2: 1.66ms
+loop 2: 2.14ms
 Cipher text: b639839be3610610478c09998f8ede508799d641f60110840dd59b2e0790b125
 Decrypted text: This is an example string
-loop 3: 1.65ms
+loop 3: 1.74ms
 Cipher text: b639839be3610610478c09998f8ede508799d641f60110840dd59b2e0790b125
 Decrypted text: This is an example string
-loop 4: 4.0ms
+loop 4: 1.67ms
 Cipher text: b639839be3610610478c09998f8ede508799d641f60110840dd59b2e0790b125
 Decrypted text: This is an example string
-loop 5: 2.01ms
-Total time:11.77
-average time:2.35
+loop 5: 1.7ms
+Total time:9.36
+average time:1.87
 -----------------------------
 Password used: Th!$IsAV3ryL0n9pA$$w0rd
 Cipher text: fffecd4d43d0e33255d4c82f86a71f235257be392215d5f1aa9a33a14b884e51
 Decrypted text: This is an example string
-loop 1: 1.46ms
+loop 1: 1.7ms
 Cipher text: fffecd4d43d0e33255d4c82f86a71f235257be392215d5f1aa9a33a14b884e51
 Decrypted text: This is an example string
-loop 2: 1.19ms
+loop 2: 1.67ms
 Cipher text: fffecd4d43d0e33255d4c82f86a71f235257be392215d5f1aa9a33a14b884e51
 Decrypted text: This is an example string
-loop 3: 1.24ms
+loop 3: 1.64ms
 Cipher text: fffecd4d43d0e33255d4c82f86a71f235257be392215d5f1aa9a33a14b884e51
 Decrypted text: This is an example string
-loop 4: 1.25ms
+loop 4: 1.62ms
 Cipher text: fffecd4d43d0e33255d4c82f86a71f235257be392215d5f1aa9a33a14b884e51
 Decrypted text: This is an example string
-loop 5: 2.69ms
-Total time:7.83
-average time:1.57
+loop 5: 1.6ms
+Total time:8.23
+average time:1.65

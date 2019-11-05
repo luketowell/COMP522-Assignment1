@@ -60,22 +60,23 @@ I have also decided to use an iteration count of 1024. The below table shows the
  defined salt and iteration counts.
 
  The below timings have been recorded running the program on a Macbook air with an Intel core i5 processor and 16GB of RAM. Timings on other machines are likely to differ.
-
-\begin{center}
+ \begin{center}
 	\begin{tabular}{ |c|c|c|c| } 
 	 \hline
 	 \multicolumn{4}{|c|}{Iteration time in milliseconds (ms)} \\
 	 \hline
 	 N & abc & P@ssW0rD & Th!\$IsAV3ryL0n9pA\$\$w0rd \\
 	 \hline
-	 1 & 1 & 1 & 1 \\ 
-	 2 & 1 & 1 & 1  \\ 
-	 3 & 1 & 1 & 1  \\ 
-	 4 & 1 & 1 & 1  \\
-	 5 & 1 & 1 & 1  \\
+	 1 & 155.77 & 2.45 & 1.46 \\ 
+	 2 & 8.55 & 1.66 & 1.19  \\ 
+	 3 & 6.27 & 1.65 & 1.24  \\ 
+	 4 & 12.94 & 4.0 & 1.25 \\
+	 5 & 1.57 & 2.01 & 2.69  \\
 	 \hline
 	 \hline
-	 Average & 1 & 1 & 1  \\
+	 Average & 7.33 & 2.35 & 1.57  \\
+	 \hline
+	 \multicolumn{4}{|c|}{The first iteration of abc has been omitted from the average} \\
 	 \hline
 	\end{tabular}
 \end{center}
@@ -90,8 +91,39 @@ iterate through each possible character that could be used in each different com
 If we presume that passwords are made of uppercase, lowercase numbers and special characters and they are
 limited to traditional ASCII encoded characters then this gives the attacker a possible 95 characters for each character in the password.
 The equation for working out a password via brute force attack is therefore $95^n$ where n is the number of characters within the password.
+The table below shows the amount of possible combinations for N character lengths.
 
-If we take the time for one iteration from above which is 1ms we can assume that it would take a maximum of 95 milliseconds per character in the worst case to crack a 3 character password which would be $95^3$ (857375 combinations) * the taken to complete one iteration e.g. 1ms per attempt would take 857375ms or 857.375 seconds or 14.3 minutes.  
+\begin{center}
+	\begin{tabular}{ |c|r| } 
+	 \hline
+	 Number of characters & Possible password combinations \\
+	 \hline
+	 1 & 95 \\
+	 2 & 9025 \\
+	 3 & 857375 \\
+	 4 & 81450625 \\
+	 5 & 7737809375 \\
+	 6 & 735091890625 \\
+	 7 & 69833729609375 \\
+	 8 & 6634204312890620 \\
+	 9 & 630249409724609000 \\
+	 10 & 59873693923837900000 \\
+	 15 & 463291230159753000000000000000 \\
+	 20 & 3584859224085420000000000000000000000000 \\
+	 23 & 3073568677250240000000000000000000000000000000 \\
+	 25 & 27738957312183400000000000000000000000000000000000  \\
+	 \hline
+	\end{tabular}
+\end{center}
+
+In order to estimate the time taken to brute force an attack we need to look at the time taken to iterate through every combination possible
+ considering that in the worse case the last combination will be the password we are attempting to discover.
+the calculation for estimating time taken to discover a password is therefore the time taken to try one password (one iteration)
+ mutliplied by the number of possible combinations. For example if we say the time taken for 1 iteration is 1ms then we can assume that it
+ would take in the worst case to crack a 3 character password (abc) which would be $95^3$ (857375 combinations) * the taken to complete one
+ iteration e.g. 1ms per attempt would take 857375ms or 857.375 seconds or 14.3 minutes.
+
+ The image 1 is a table of times taken to 
 
 \section{How Does Iteration Count Affect Brute Force Timing?}
 What does iteration count mean?
@@ -105,6 +137,8 @@ E.g. If the iteration count was 300 and the hacker started their hack attempt wi
 to work out the characters in the password $95^n*i$ where $i$ is the number of iterations needed to reach the one initially
 used when hashing the password.
 
+
+
 \section{Comparison with Online Services}
 \begin{center}
 	\begin{tabular}{ |c|c|c| } 
@@ -113,7 +147,7 @@ used when hashing the password.
 	 \hline
 	 abc & 400 ns & 1 \\ 
 	 P@ssW0rD & ? & 9 hrs \\ 
-	 Th!\$IsAV3ryL0n9pA\$\$w0rd & 1 & 19,000,000,000,000,000,000,000,000 Yrs (19 Septillion Years) \\ 
+	 Th!\$IsAV3ryL0n9pA\$\$w0rd & 1 & 19 Septillion Years \\ 
 	 \hline
 	\end{tabular}
 \end{center}
