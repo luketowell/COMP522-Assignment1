@@ -39,7 +39,11 @@
 	\maketitle
 
 \maketitle
-\section{Password List}
+\begin{center}
+Code repository: \href{https://github.com/luketowell/COMP522-Assignment1}
+\end{center}
+
+\section*{1. Password List}
 Below is the password list that I have decided to use for this exercise.
 \begin{center}
 	\begin{tabular}{ |c|c| } 
@@ -53,11 +57,12 @@ Below is the password list that I have decided to use for this exercise.
 	\end{tabular}
 \end{center}
 
-\section{Salt and Iteration Count}
+\section*{2. Salt and Iteration Count}
 For the purpose of this coursework I have hardcoded the salt used within this program, 
 I have also decided to use an iteration count of 1024. The below table shows the time per run and the average time
  taken in milliseconds over 5 iterations to encrypt and decrypt the string "This is an example string" using the 
- defined salt and iteration counts.
+ defined salt and iteration counts. \textit{Appendix A} details the code used for executing the encryption and decryption program.
+ \textit{Appendix B} Is the output produced by the code.
 
  The below timings have been recorded running the program on a Macbook air with an Intel core i5 processor and 16GB of RAM.
   Timings on other machines are likely to differ.
@@ -82,14 +87,14 @@ I have also decided to use an iteration count of 1024. The below table shows the
 	\end{tabular}
 \end{center}
 
-\section{Brute Force Attack Estimation}
+\section*{3. Brute Force Attack Estimation}
 Given that it is specified that the attacker knows the salt, iteration count, encryption type, 
 input string and cipher text used to encrypt the input string then the only piece of information 
 the attacker would need to find is the password used to encrypt the string. 
 In order to work out the password using a Brute force attach the attacker is going to have to 
 iterate through each possible character that could be used in each different combination.
 
-If we presume that passwords are made of uppercase, lowercase numbers and special characters and they are
+If we presume that passwords are made of uppercase, lowercase, numbers and special characters and they are
 limited to traditional ASCII encoded characters then this gives the attacker a possible 95 characters for each character in the password.
 The equation for working out a password via brute force attack is therefore $95^n$ where n is the number of characters within the password.
 The table below shows the amount of possible combinations for N character lengths.
@@ -135,7 +140,7 @@ The calculation for estimating time taken to discover a password is therefore th
 	 \hline
 	 Password & characterLength & Estimation to discover \\
 	 \hline
-	 abc & 3 & 142.5ms \\
+	 abc & 3 & 21mins \\
 	 P@ssW0rD & 8 & 315,554 years \\
 	 Th!\$IsAV3ryL0n9pA\$\$w0rd & 23 & 105 Septillion Years \\
 	 \hline
@@ -150,32 +155,52 @@ The calculation for estimating time taken to discover a password is therefore th
 	\caption{Table of time taken to discover characters assuming 1 iteration takes 1 millisecond.}
 \end{figure}
 
-\section{How Does Iteration Count Affect Brute Force Timing?}
-What does iteration count mean?
+\section*{4. How Does Iteration Count Affect Brute Force Timing?}
+An iteration count is the number of times the password is hashed when generating the key used for encryption.
+ There for without the correct iteration count the hacker is going to be unable to obtain the correct key and
+  therefore will be unable to correctly tell if they've reached the correct password.
 
-What is the maximum value of iteration count?
-
-\section{Brute Force Attack Estimation Without Known Iteration Count}
-Essentially if a hacker does not know the iteration count of an application then they have to try the same brute
+\section*{5. Brute Force Attack Estimation Without Known Iteration Count}
+If a hacker does not know the iteration count of an application then they have to try the same brute
 force attack multiple times for multiple iteration counts which essentially means that the time taken grows exponentially.
-E.g. If the iteration count was 300 and the hacker started their hack attempt with an iteration count of 1 they would have
+E.g. If the iteration count was 300 and the hacker started their attempt with an iteration count of 1 they would have
 to work out the characters in the password $95^n*i$ where $i$ is the number of iterations needed to reach the one initially
-used when hashing the password.
+used when hashing the password e.g. $95^n*300$ would be the maximum number of possible combinations to discover the correct password and correct iteration count.
 
-
-
-\section{Comparison with Online Services}
+\section*{6. Comparison with Online Services}
+The table below is the estimation of how long I believe it would take to discover my passwords compared to what an online website has estimated.
 \begin{center}
 	\begin{tabular}{ |c|c|c| } 
 	 \hline
 	 Password & My Estimation & Online Estimation  \\
 	 \hline
-	 abc & 400 ns & 1 \\ 
-	 P@ssW0rD & ? & 9 hrs \\ 
-	 Th!\$IsAV3ryL0n9pA\$\$w0rd & 1 & 19 Septillion Years \\ 
+	 abc & 21mins & 400 ns \\ 
+	 P@ssW0rD & 315,554 years & 9 hrs \\ 
+	 Th!\$IsAV3ryL0n9pA\$\$w0rd & 105 Septillion Years & 19 Septillion Years \\ 
 	 \hline
 	\end{tabular}
 \end{center}
+
+There are a number of potential reasons for the difference between my service(\textit{Appendix A})
+ and the online service(\textit{https://howsecureismypassword.net/}). I have listed some of them below:
+
+\begin{enumerate}
+	\item Different Attack Methods
+	It is not specified on the web application which methods are being used to crack the password that are provided to the service. 
+	The first password 'abc' is estimated to be discovered in 400ns. One of the potential reasons that this password is so easy to crack
+	 could be that the service is also considering time taken using something like a dictionary attack which looks for commonly used phrases or passwords. 
+	 In this case a password like 'abc' is very easily discovered because of how common it is. 
+
+	
+	\item Larger Computational Power
+	The online web application is likely running on a more powerful server / multiple servers which will produce a faster iteration speed
+	 which will mean that the user of the machine would be able to try more iterations in a shorter time period hence why the times generated
+	  by the web application are considerably faster than the times generated by my machine.
+
+	Another variation of more computational power would be multithreaded / multicore machines which would then mean that the program
+	could attempt multiple passwords at a time which would mean that the iteration count could be divided across the multiple threads or cores.
+	 This would mean that the attacker can attempt to crack the password in a shorter period of time than my single core machine.
+\end{enumerate}
 
 \newpage
 \section*{Appendices}

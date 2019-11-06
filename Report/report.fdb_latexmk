@@ -1,9 +1,9 @@
 # Fdb version 3
-["pdflatex"] 1572958719 "/Users/luketowell/Development/comp522-assignment1/Report/report.tex" "/Users/luketowell/Development/comp522-assignment1/Report/report.pdf" "report" 1572958720
+["pdflatex"] 1573072459 "/Users/luketowell/Development/comp522-assignment1/Report/report.tex" "/Users/luketowell/Development/comp522-assignment1/Report/report.pdf" "report" 1573072459
   "../code/PasswordBasedEncryption.java" 1572790133 4225 8ad027db03f5ef6a4e02009fd0c71fca ""
   "../code/timings.txt" 1572878185 2335 5d011941e5a9a67b305490f68fac91e2 ""
-  "/Users/luketowell/Development/comp522-assignment1/Report/report.aux" 1572958720 1373 b684afe6b4db4e472710432ea077f60b ""
-  "/Users/luketowell/Development/comp522-assignment1/Report/report.tex" 1572958719 6806 54fc3a9de4684d6ea3ca6835057db39c ""
+  "/Users/luketowell/Development/comp522-assignment1/Report/report.aux" 1573072459 8 a94a2480d3289e625eea47cd1b285758 ""
+  "/Users/luketowell/Development/comp522-assignment1/Report/report.tex" 1573072458 9185 d7ef40d3755255b2cf082d87a19977f2 ""
   "/usr/local/texlive/2019/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -75,11 +75,11 @@
   "/usr/local/texlive/2019/texmf-var/web2c/pdftex/pdflatex.fmt" 1571404311 4259637 7774343c226f9346467ec19bc95c1570 ""
   "/usr/local/texlive/2019/texmf.cnf" 1557341546 577 d150fef99ac436ad1156e86b0892f6ef ""
   "Images/timeEstimationImage.png" 1572957964 238763 122ba18ee871e0e954807a9474ab5981 ""
-  "report.aux" 1572958720 1373 b684afe6b4db4e472710432ea077f60b "pdflatex"
-  "report.tex" 1572958719 6806 54fc3a9de4684d6ea3ca6835057db39c ""
+  "report.aux" 0 -1 0 "pdflatex"
+  "report.tex" 1573072458 9185 d7ef40d3755255b2cf082d87a19977f2 ""
   (generated)
   "report.log"
-  "report.aux"
-  "/Users/luketowell/Development/comp522-assignment1/Report/report.pdf"
   "/Users/luketowell/Development/comp522-assignment1/Report/report.log"
+  "/Users/luketowell/Development/comp522-assignment1/Report/report.pdf"
+  "report.aux"
   "report.pdf"
