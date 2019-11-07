@@ -13,6 +13,9 @@ import java.security.Key;
 
 public class PasswordBasedEncryption {
     public static void main(String[] args) throws Exception {
+        PBEKeySpec pbeKeySpec;
+        PBEParameterSpec pbeParamSpec;
+        SecretKeyFactory keyFac;
         // setup iteration count
         int iterationCount = 5;
 
@@ -27,10 +30,8 @@ public class PasswordBasedEncryption {
             double[] time = new double[6];
             System.out.println("Password used: " + passwords[i]);
 
-            for (int j = 0; j < iterationCount; j++) {
-                PBEKeySpec pbeKeySpec;
-                PBEParameterSpec pbeParamSpec;
-                SecretKeyFactory keyFac;
+            for (int j = 0; j <= iterationCount; j++) {
+
                 // start timing
                 long startTime = System.nanoTime();
                 // Salt
